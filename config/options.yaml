@@ -58,8 +58,7 @@ preprocess:
       - Barcode_BarcodeCalled
       - Barcode_MatchedTo_ID
     exact_match_reads_col: "exact_match_reads_per_cell"
-    drop_barcodes:
-      - AAAATTTTCCCCGGGG
+    drop_barcodes: false
   process-cells:
     perform: true
     force_overwrite: true
@@ -86,11 +85,20 @@ preprocess:
     force_overwrite: true
     correlation_threshold: .2
     painting_image_names:
-      - ConA
-      - Hoechst
-      - Mito
-      - SYTO
-      - WGA
+      - DNA
+      - Phalloidin
+      - Catalase
+      - btubulin
+      - Calnexin
+      - P65NFkb
+      - COXIV
+      - Golgin97
+      - LAMP1
+      - PRSPS6
+      - Syto9
+      - TDP43
+      - G3BP1
+      - GM130
     barcoding_prefix: CorrCycle
 ---
 profile:
@@ -134,7 +142,7 @@ profile:
     by_samples: all
     features: infer
   feature_select:
-    perform: true
+    perform: false
     force_overwrite: true
     operations:
       - variance_threshold
